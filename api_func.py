@@ -7,7 +7,6 @@ import gmaps
 import numpy as np
 import pandas as pd
 from Bio import Entrez
-import gmaps.geojson_geometries
 
 Entrez.email = 'jake.son@childmind.org'
 
@@ -69,5 +68,6 @@ fig = gmaps.figure(center=US_coordinates, zoom_level=4)
 heatmap_layer = gmaps.heatmap_layer(school_locations)
 heatmap_layer.point_radius = 10
 heatmap_layer.max_intensity = 5
+# TODO both the radius and intensity must scale with # papers
 fig.add_layer(heatmap_layer)
 fig
